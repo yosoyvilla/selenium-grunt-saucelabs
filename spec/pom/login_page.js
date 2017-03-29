@@ -7,7 +7,7 @@ var LoginPage = (function () {
     }
 
     LoginPage.prototype.visitPage = function () {
-        browser.get("http://eter:9002/#/");
+        browser.get("http://eter:9000/#/");
     };
 
     LoginPage.prototype.fillUser = function (username) {

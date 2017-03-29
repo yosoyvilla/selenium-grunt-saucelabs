@@ -5,6 +5,18 @@ exports.config = {
   },
   specs: ['../spec/poc/poc-spec.js'],
     jasmineNodeOpts: {
-    showColors: true
-  }
+        showColors: true,
+    defaultTimeoutInterval: 30000,
+    isVerbose: true,
+    includeStackTrace: true
+  },
+framework: 'jasmine2',
+onPrepare: function() {
+    var jasmineReporters = require('jasmine-reporters');
+    jasmine.getEnv().addReporter(new jasmineReporters.JUnitXmlReporter({
+        consolidateAll: true,
+        savePath: './reports',
+        filePrefix: 'xmloutput'
+    }));
+}
 };
